@@ -12,7 +12,7 @@ const Vaccinations = () => {
   },[])
 
   const getVaccinations = async () => {
-    let res = await axios.get(`http://localhost:3001/api/uservaccinations/10`)
+    let res = await axios.get(`http://localhost:3001/api/vaccinations/10`)
     console.log(res.data)
     setVaccinations(res.data)
   }
@@ -33,7 +33,7 @@ const Vaccinations = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Vaccines</Text>
+      <Text>My Vaccinations</Text>
       {vaccinations ? renderVaccinations() : <Text>Loading...</Text>}
     </View>
   )

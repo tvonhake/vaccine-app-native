@@ -3,6 +3,9 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Vaccinations from './Pages/Vaccinations';
+import MyQRCode from './Pages/MyQRCode'
+import MyProfile from './Pages/MyProfile';
+import VaccinesByVerifier from './Pages/VaccinesByVerifier';
 
 function HomeScreen() {
   return (
@@ -25,9 +28,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="My Profile" component={MyProfile} />
         <Tab.Screen name="My Vaccinations" component={Vaccinations} />
+        <Tab.Screen name="My QR Code" component={MyQRCode} />
+        <Tab.Screen name="Verifiers" component={VaccinesByVerifier} />
       </Tab.Navigator>
     </NavigationContainer>
   );
