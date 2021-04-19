@@ -27,7 +27,7 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name="vaccinations" component={Vaccinations} />
+        <Tab.Screen name="My Vaccinations" component={Vaccinations} />
       </Tab.Navigator>
     </NavigationContainer>
   );
