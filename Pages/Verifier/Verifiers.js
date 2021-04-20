@@ -18,6 +18,13 @@ const Verifiers = ({navigation}) => {
       marginTop: 20,
       flexBasis: 'auto', 
     },
+    loader: {
+      textAlign: 'center', 
+      fontSize: 15,
+      marginTop: 0,
+      width: 'auto',
+      paddingBottom: 20
+  }
   });
 
   const getVerifiers = async () => {
