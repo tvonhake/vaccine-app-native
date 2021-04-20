@@ -36,7 +36,7 @@ const Verifiers = ({navigation}) => {
   return (
     <View style={[styles.container]}>
       {/* <Text>All Verifiers</Text> */}
-      {verifiers ? renderVerifiers() : <Text>Loading...</Text>}
+      {verifiers ? renderVerifiers() : <Text style={[styles.loader]}>Loading...</Text>}
     </View>
   )
 }

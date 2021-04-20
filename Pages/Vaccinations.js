@@ -24,7 +24,14 @@ const Vaccinations = ({navigation}) => {
         fontSize: 18,
         marginTop: 0,
         width: 'auto',
-    }
+    },
+    loader: {
+      textAlign: 'center', 
+      fontSize: 15,
+      marginTop: 0,
+      width: 'auto',
+      paddingBottom: 20
+  }
   });
 
   const getVaccinations = async () => {
@@ -57,7 +64,7 @@ const Vaccinations = ({navigation}) => {
       flexDirection: "column"
     }]}>
       {/* <Text style={[styles.title]}>My Vaccinations</Text> */}
-      {vaccinations ? renderVaccinations() : <Text>Loading...</Text>}
+      {vaccinations ? renderVaccinations() : <Text style={[styles.loader]}>Loading...</Text>}
     </View>
   )
 }

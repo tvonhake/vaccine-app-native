@@ -25,7 +25,14 @@ const MyProfile = ({navigation}) => {
         marginTop: 0,
         width: 'auto',
         paddingBottom: 20
-    }
+    },
+    loader: {
+      textAlign: 'center', 
+      fontSize: 15,
+      marginTop: 0,
+      width: 'auto',
+      paddingBottom: 20
+  }
   });
 
   const getUserInfo = async () => {
@@ -57,9 +64,8 @@ const MyProfile = ({navigation}) => {
         flexDirection: "column"
       }]}>
         <Text style={[styles.title]}>My Profile</Text>
-        {user ? renderUser() : <Text>Loading...</Text>}
-        <Text>{"\n"}</Text>
-        <Button
+        {user ? renderUser() : <Text style={[styles.loader]}>Loading...</Text>}
+        {/* <Button
           title="My Vaccinations"
           type="solid"
           style={{paddingBottom: 20}}
@@ -76,7 +82,7 @@ const MyProfile = ({navigation}) => {
           type="solid"
           style={{paddingBottom: 20}}
           onPress={() => navigation.navigate('All Verifiers')}
-        />
+        /> */}
       </View>
     );
 }

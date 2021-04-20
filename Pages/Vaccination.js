@@ -35,7 +35,6 @@ const Vaccination = (props) => {
       <Card>
         <Card.Title>Vaccination Card Image</Card.Title>
         <Card.Divider/>
-          {console.log(route.params.vaccination)}
         <Image
           style={styles.stretch}
           source={{
