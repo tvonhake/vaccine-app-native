@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Card} from 'react-native-elements'
 import axios from 'axios'
 import Verifier from './Verifier';
@@ -20,6 +20,30 @@ const VerifierReqs = (props) => {
     setVerifier(route.params.verifier)
     getVaccinations(verifier)
   },[])
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 20,
+      marginTop: 40,
+      flexBasis: 'auto', 
+    },
+    title: {
+        textAlign: 'center', 
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginTop: 0,
+        width: 'auto',
+        paddingBottom: 20
+    },
+    loader: {
+      textAlign: 'center', 
+      fontSize: 15,
+      marginTop: 0,
+      width: 'auto',
+      paddingBottom: 20
+  }
+  });
 
 
 
@@ -60,9 +84,9 @@ const VerifierReqs = (props) => {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>{verifier.name} Required Vaccinations</Text>
-      {vaccinations ? renderVaccinations() : <Text>Loading...</Text>}
+    <View style={[styles.container]}>
+      <Text style={[styles.title]}>{verifier.name} Required Vaccinations</Text>
+      {vaccinations ? renderVaccinations() : <Text style={[styles.loader]}>Loading...</Text>}
     </View>
   )
 }

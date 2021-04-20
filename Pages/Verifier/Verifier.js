@@ -7,10 +7,10 @@ const Verifier = (props) => {
   const {verifier, navigation} = props
 
   return (
-    <Card >
         <Button
           title={verifier.name}
-          type="outline"
+          type="solid"
+          style={{paddingBottom: 20}}
           onPress={() => {
             navigation.navigate('Verifiers', {
               screen: 'Verifier Requirements',
@@ -19,7 +19,6 @@ const Verifier = (props) => {
           }
           }
         />
-    </Card>
   )
 }
 

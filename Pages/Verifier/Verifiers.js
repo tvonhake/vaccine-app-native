@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios'
 import Verifier from './Verifier'
 
@@ -10,6 +10,15 @@ const Verifiers = ({navigation}) => {
   useEffect(() => {
     getVerifiers()
   },[])
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 20,
+      marginTop: 20,
+      flexBasis: 'auto', 
+    },
+  });
 
   const getVerifiers = async () => {
     let res = await axios.get(`http://localhost:3001/api/users/verifiers`)
@@ -25,8 +34,8 @@ const Verifiers = ({navigation}) => {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>All Verifiers</Text>
+    <View style={[styles.container]}>
+      {/* <Text>All Verifiers</Text> */}
       {verifiers ? renderVerifiers() : <Text>Loading...</Text>}
     </View>
   )
