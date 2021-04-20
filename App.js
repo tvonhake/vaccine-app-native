@@ -2,16 +2,31 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack'
 import Vaccinations from './Pages/Vaccinations';
 import MyQRCode from './Pages/MyQRCode'
 import MyProfile from './Pages/MyProfile';
-import VaccinesByVerifier from './Pages/VaccinesByVerifier';
+import Verifiers from './Pages/Verifier/Verifiers';
+import VerifierReqs from './Pages/Verifier/VerifierReqs';
+import Vaccination from './Pages/Vaccination';
 
-function HomeScreen() {
+const Stack = createStackNavigator();
+
+function VerifiersNav() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="All Verifiers" component={Verifiers} />
+      <Stack.Screen name="Verifier Requirements" component={VerifierReqs} />
+    </Stack.Navigator>
+  );
+}
+
+function VaccinationsNav() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="My Vaccines" component={Vaccinations} />
+      <Stack.Screen name="Vaccine" component={Vaccination} />
+    </Stack.Navigator>
   );
 }
 
@@ -29,9 +44,9 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="My Profile" component={MyProfile} />
-        <Tab.Screen name="My Vaccinations" component={Vaccinations} />
+        <Tab.Screen name="My Vaccinations" component={VaccinationsNav} />
         <Tab.Screen name="My QR Code" component={MyQRCode} />
-        <Tab.Screen name="Verifiers" component={VaccinesByVerifier} />
+        <Tab.Screen name="Verifiers" component={VerifiersNav} />
       </Tab.Navigator>
     </NavigationContainer>
   );

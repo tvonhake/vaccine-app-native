@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Text, View } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, Button} from 'react-native-elements'
 import axios from 'axios'
 
-const Vaccinations = () => {
+const Vaccinations = ({navigation}) => {
   
   const [vaccinations, setVaccinations] = useState(null)
 
@@ -13,7 +13,6 @@ const Vaccinations = () => {
 
   const getVaccinations = async () => {
     let res = await axios.get(`http://localhost:3001/api/vaccinations/10`)
-    console.log(res.data)
     setVaccinations(res.data)
   }
 
@@ -21,12 +20,18 @@ const Vaccinations = () => {
     return vaccinations.map(vaccination => {
       return(
         <Card key={vaccination.id}>
-          <Card.Title>{vaccination.vaccine_name}</Card.Title>
-          <Card.Divider/>
-            <Text style={{marginBottom: 10}}>
-              Vaccine Info Here
-            </Text>
-        </Card>
+        <Button
+          title={vaccination.vaccine_name}
+          type="outline"
+          onPress={() => {
+            navigation.navigate('My Vaccinations', {
+              screen: 'Vaccine',
+              params: { vaccination: vaccination}
+            })
+          }
+          }
+        />
+    </Card>
       )
     })
   }
