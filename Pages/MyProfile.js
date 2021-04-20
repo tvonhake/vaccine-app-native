@@ -37,7 +37,6 @@ const MyProfile = ({navigation}) => {
 
   const getUserInfo = async () => {
     let res = await axios.get(`http://localhost:3001/api/users/10`)
-    console.log(res.data)
     setUser(res.data)
   }
 

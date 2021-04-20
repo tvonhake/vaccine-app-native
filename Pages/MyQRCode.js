@@ -7,7 +7,7 @@ const Vaccinations = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <QRCode value="user_id: 1" />
+      <QRCode value="user_id: 10" />
       <Text>{"\n"}</Text>
       <Text>Present this QR Code for Verifier to Scan</Text>
     </View>

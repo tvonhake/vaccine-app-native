@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import { Card} from 'react-native-elements'
 import axios from 'axios'
-import Verifier from './Verifier';
 
 const VerifierReqs = (props) => {
   
