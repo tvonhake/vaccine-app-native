@@ -64,10 +64,10 @@ const MyProfile = ({navigation}) => {
       }]}>
         <Text style={[styles.title]}>My Profile</Text>
         {user ? renderUser() : <Text style={[styles.loader]}>Loading...</Text>}
-        {/* <Button
+        <Button
           title="My Vaccinations"
           type="solid"
-          style={{paddingBottom: 20}}
+          style={{paddingBottom: 20, marginTop: 20}}
           onPress={() => navigation.navigate('My Vaccinations')}
         />
         <Button
@@ -81,7 +81,7 @@ const MyProfile = ({navigation}) => {
           type="solid"
           style={{paddingBottom: 20}}
           onPress={() => navigation.navigate('All Verifiers')}
-        /> */}
+        />
       </View>
     );
 }
