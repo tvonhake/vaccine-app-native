@@ -9,7 +9,7 @@ Setup:
 5. pod install
 
 6. open vaccine-passport project and run rails server for vaccine-passport 
-  (When running this app you can run vaccine-passport yarn start as well. To see any changes made in the web app reflect in the ios app, reload the app in terminal Metro console or RN Debugger UI in browser)
+  (When running this app you can run vaccine-passport yarn start as well. To see any changes made in the web app reflect in the ios app, reload the ios app in terminal Metro console or RN Debugger UI in browser)
   
 7. in vaccine-app-native folder: npx react-native run-ios
 
