@@ -1,5 +1,5 @@
 # React Native App for Vaccine Passport
-this app supports and runs along with the Vaccine Passport application (found at https://github.com/Derek229/vaccine-passport )
+this app supports and runs along with the Vaccine Passport web application (found at https://github.com/Derek229/vaccine-passport )
 
 Setup:
 1. git clone git@github.com:tvonhake/vaccine-app-native.git [your project name here]
@@ -9,7 +9,7 @@ Setup:
 5. pod install
 
 6. open vaccine-passport project and run rails server for vaccine-passport 
-  (you can also run yarn if you want to, any changes made in the web app will require a reload of the react-native app)
+  (can run yarn start as well. Seeing any changes made in the web app reflect in the ios app will require a reload in metro console or RN Debugger UI in browser)
   
 7. in vaccine-app-native folder: npx react-native run-ios
 
