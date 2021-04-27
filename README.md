@@ -1,6 +1,9 @@
 # React Native App for Vaccine Passport
 this app supports and runs along with the Vaccine Passport web application (found at https://github.com/Derek229/vaccine-passport )
 
+this RN project is a demo prototype independent of the Vaccine Passport web system
+Vaccine App Native is not intended for actual use - fully functional Vaccine Passport RN app available at : https://github.com/tvonhake/VaccinePassport-ReactNativeWebView
+
 Setup:
 1. git clone git@github.com:tvonhake/vaccine-app-native.git [your project name here]
 2. cd into cloned project folder
